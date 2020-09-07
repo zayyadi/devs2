@@ -1,0 +1,16 @@
+{% from 'form_helper.html' import displayField %}
+{% extends 'prelogin-layout.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+       <h2>Login Now</h2>
+       <p>Enter your Username and Password to start PolChat</p>
+       
+       <form action="{{ url_for('login')}}" method="POST">
+            {{ displayField(form.username, 'Username', autocomplete="off", autofocous=true)}}
+            {{ displayField(form.password, 'Password')}}
+            
+       </form>
+        
+{% endblock %}
