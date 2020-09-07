@@ -17,11 +17,7 @@ def index():
     if reg_form.validate_on_submit():
         username = reg_form.username.data
         password = reg_form.password.data
-
-        user_object = User.query.filter_by(username=username).first()
-        if user_object:
-            return "someone else has taken this username!"
-
+        
         user = User(username=username, password=password)
         db.session.add(user)
         db.session.commit()
