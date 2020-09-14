@@ -44,7 +44,7 @@ def index():
         hashed_pswd = pbkdf2_sha256.hash(password)
 
         # Add username & hashed password to DB
-        user = User(username=username, hash_pswd=hashed_pswd)
+        user = User(username=username, hashed_pswd=hashed_pswd)
         db.session.add(user)
         db.session.commit()
 
